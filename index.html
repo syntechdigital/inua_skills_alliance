@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ISA</title>
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -198,10 +199,55 @@ These raise visibility and attract new members.</li>
     <h2>Contact</h2>
    <p>Email: <a href="mailto:inukaskills.info@gmail.com">inukaskills.info@gmail.com</a></p>
   </section>
-<script>function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("show");
-}
+<script>
+  // Your original function
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+  }
+
+  // Close floating elements when clicking outside
+  document.addEventListener("click", function(e) {
+    const navLinks = document.getElementById("navLinks");
+
+    // If nav menu is open and click is outside both the menu and the menu button
+    if (navLinks.classList.contains("show") &&
+        !navLinks.contains(e.target) &&
+        !e.target.closest(".menu-icon")) {
+      navLinks.classList.remove("show");
+    }
+
+    // Example: if you have a dashboard element
+    const dashboard = document.querySelector(".dashboard-line");
+    if (dashboard && !dashboard.contains(e.target)) {
+      dashboard.style.display = "none";
+    }
+  });
+
+  // Hide header and footer while scrolling, show them again when scrolling stops
+  document.addEventListener("DOMContentLoaded", function() {
+    const header = document.querySelector("header");
+    const footer = document.querySelector("footer");
+    let scrollTimer;
+
+    window.addEventListener("scroll", function() {
+      // Hide header and footer while scrolling
+      header.style.transform = "translateY(-100%)";
+      footer.style.transform = "translateY(100%)";
+
+      // Clear any previous timer
+      clearTimeout(scrollTimer);
+
+      // After scrolling stops (e.g., 250ms), show them again
+      scrollTimer = setTimeout(function() {
+        header.style.transform = "translateY(0)";
+        footer.style.transform = "translateY(0)";
+      }, 250);
+    });
+  });
 </script>
+</body>
+</html>
+
   <footer>
     © 2026. All rights reserved.
      </footer>
