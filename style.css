@@ -45,15 +45,15 @@ html {
 
 /* Logo on the left */
 .logo {
-  width: 4.0rem;
+  width: 6.0rem;
   height: auto;
 }
 
 /* Title next to logo */
 header h1 {
-  font-size: 4.0rem;
-  font-weight: 700;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 6.0rem;
+  font-weight: 800;
+  font-family:"Times New Roman", Times, serif;
   margin-left: 15px;
   text-shadow: #3b1111;
   flex: 1;                   /* take available space */
