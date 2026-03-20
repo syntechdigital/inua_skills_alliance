@@ -7,7 +7,7 @@
 /* Fixed Header */
 header {
   position: fixed;
-   font-family: 'Times New Roman', Times, serif;
+  font-family: 'Times New Roman', Times, serif;
   top: 0;
   left: 0;
    grid-template-columns: auto 1fr auto;
@@ -303,4 +303,17 @@ footer {
 }
 hr {
   border-color: #333;
+}
+.pdf-button {
+  display: inline-block;
+  background-color: #004466;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.pdf-button:hover {
+  background-color: #003355;
 }
